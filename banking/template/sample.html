@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample page</title>
+</head>
+<body>
+<h1 style="text-align:center;">click the below button for form</h1>
+<div style="text-align:center;">
+<form method="post" action=" ">
+    {% csrf_token %}
+    <input type="submit" name="SUBMIT">
+</form>
+ </div>
+</body>
+</html>

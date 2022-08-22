@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<body style="background-image:url({% static 'assets/images/ban1.png' %});background-repeat:no-repeat;background-size:100%;">
+<h1 style="text-align:center;"><b>APPLICATION FORM</b></h1>
+<div style="text-align:center;">
+<form method="post" action="">
+     {% csrf_token %}
+    <input type="text"name="username"placeholder="enter your name"><br>
+    <input type="text"name="Date Of Birth"placeholder="enter your DOB"><br>
+    <input type="text"name="Age"placeholder="enter your Age"><br>
+
+    <input type="email"name="email"placeholder="enter your email"><br>
+    <input type="text"name="Phone number"placeholder="enter your phone number"><br>
+
+   <label>GENDER:</label><br>
+    <input type="radio"name="gender">male<br>
+    <input type="radio"name="gender">female<br>
+    Address:
+    <textarea cols= "30" rows="10" value="address"></textarea><br>
+    <label>District:</label>
+    <select>
+        <option value="District">District</option>
+         <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+         <option value="Kollam">Kollam</option>
+         <option value="Alapuzha">Alapuzha</option>
+         <option value="Kozhikode">Kozhikode</option>
+         <option value="Ernakulam">Ernakulam</option>
+    </select><br>
+     <label>Account type:</label>
+    <select>
+        <option value="Account type"></option>
+         <option value="savings account">savings account</option>
+         <option value="current account">current account</option>
+         <option value="Zero balance">Zero balance</option>
+
+    </select><br>
+    <label>Materials provide</label><br>
+    <input type="checkbox"name="checkbox">Debit Card<br>
+     <input type="checkbox"name="checkbox">Pan Card<br>
+    <input type="checkbox"name="checkbox">Credit Card<br>
+    <input type="checkbox"name="checkbox">Cheque Book<br>
+
+
+
+    <input type="submit">
+    <button type="button">LOGOUT</button><br>
+    {% for msg in messages %}
+     {{msg}}
+     {% endfor %}
+    <br><a href="{% url 'demo' %}">click here to go Home</a>
+</form>
+ </div>
+</body>
+</html>
